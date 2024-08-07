@@ -1,0 +1,260 @@
+// шрифты
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-Hairline.eot');
+	src: local('PF Din Text Universal Hairline'), local('PFDinTextUniversal-Hairline'),
+		url('../fonts/PFDinTextUniversal-Hairline.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-Hairline.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-Hairline.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-Medium.eot');
+	src: local('PF Din Text Universal Medium'), local('PFDinTextUniversal-Medium'),
+		url('../fonts/PFDinTextUniversal-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-Medium.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-ExtraThin.eot');
+	src: local('PF Din Text Universal ExtraThin'), local('PFDinTextUniversal-ExtraThin'),
+		url('../fonts/PFDinTextUniversal-ExtraThin.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-ExtraThin.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-ExtraThin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-Light.eot');
+	src: local('PF Din Text Universal Light'), local('PFDinTextUniversal-Light'),
+		url('../fonts/PFDinTextUniversal-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-Light.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal.eot');
+	src: local('PF Din Text Universal'), local('PFDinTextUniversal'),
+		url('../fonts/PFDinTextUniversal.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-ExtraBlack.eot');
+	src: local('PF Din Text Universal ExtraBlack'), local('PFDinTextUniversal-ExtraBlack'),
+		url('../fonts/PFDinTextUniversal-ExtraBlack.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-ExtraBlack.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-ExtraBlack.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-Thin.eot');
+	src: local('PF Din Text Universal Thin'), local('PFDinTextUniversal-Thin'),
+		url('../fonts/PFDinTextUniversal-Thin.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-Thin.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'PF Din Text Universal';
+	src: url('../fonts/PFDinTextUniversal-Bold.eot');
+	src: local('PF Din Text Universal Bold'), local('PFDinTextUniversal-Bold'),
+		url('../fonts/PFDinTextUniversal-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/PFDinTextUniversal-Bold.woff2') format('woff2'),
+		url('../fonts/PFDinTextUniversal-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+
+.datepicker {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	user-select: none;
+}
+
+.datepicker__backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.25);
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+}
+
+.datepicker__box {
+	position: absolute;
+	left: 36%;
+	min-width: 365px;
+	margin: 0 5px;
+	background: #fff;
+	border-radius: 16px 16px 0 0;
+	transform: translateY(100%);
+	transition: transform 0.3s ease-out;
+}
+
+.datepicker._visible .datepicker__backdrop {
+	opacity: 1;
+	transition: opacity 0.3s;
+}
+
+.datepicker._visible .datepicker__box {
+	transform: translateY(0);
+	bottom: 0;
+}
+
+.datepicker._hiding .datepicker__backdrop {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.datepicker._hiding .datepicker__box {
+	transform: translateY(100%);
+	bottom: -100%;
+	transition: transform 0.5s, bottom 0.5s;
+}
+
+.datepicker__controls {
+	width: 228px;
+	height: 142px;
+	position: relative;
+	display: flex;
+	gap: 11px;
+	margin: 0 auto;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 40px 24px 40px;
+}
+
+.datepicker__controls::before {
+	position: absolute;
+	z-index: 1000;
+	top: 0;
+	content: '';
+	width: 100%;
+	height: 50px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 125%);
+}
+
+.datepicker__controls::after {
+	position: absolute;
+	z-index: 1000;
+	bottom: 10px;
+	content: '';
+	width: 100%;
+	height: 50px;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 125%);
+}
+
+.datepicker__control {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 84px;
+	height: 108px;
+	overflow: hidden;
+	position: relative;
+}
+
+.datepicker__control:after {
+	content: '';
+	position: absolute;
+	height: 40px;
+	width: 70px;
+	top: 35px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border-top: 1px solid #073d5982;
+	border-bottom: 1px solid #073d5982;
+	pointer-events: none;
+}
+
+.datepicker__control-item {
+	font-family: 'PF Din Text Universal', Arial, Helvetica, sans-serif;
+	color: #03314D;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 28px;
+	padding: 0px 12px;
+	text-align: center;
+}
+
+.datepicker__title {
+	font-family: 'PF Din Text Universal', Arial, Helvetica, sans-serif;
+	color: #03314D;
+	font-size: 20px;
+	line-height: 24px;
+	padding-top: 24px;
+	line-height: 22px;
+	padding-bottom: 12px;
+	text-align: center;
+}
+
+.datepicker__buttons {
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	gap: 24px;
+}
+
+.datepicker__button {
+	font-family: 'PF Din Text Universal', Arial, Helvetica, sans-serif;
+	flex-grow: 1;
+	flex-shrink: 1;
+	font-size: 18px;
+	line-height: 1em;
+	max-width: 147px;
+	min-height: 48px;
+	font-weight: 500;
+	border: 24px;
+	background: transparent;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.datepicker__cancel {
+	background-color: #fff;
+	color: #1272AE;
+	border: 1px solid #1272AE;
+}
+
+.datepicker__ok {
+	color: #fff;
+	background-color: #C6093B;
+	border-color: #C6093B;
+}
+
+.datepicker__button:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
